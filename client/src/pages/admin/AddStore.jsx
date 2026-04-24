@@ -53,9 +53,9 @@ export default function AddStore() {
     <div className="max-w-md">
       <h2 className="text-lg font-semibold mb-4">Add Store</h2>
       <form onSubmit={handleSubmit} className="bg-white border rounded p-6 space-y-4">
-        <Input label="Name" name="name" value={form.name} onChange={handleChange} error={errors.name} />
-        <Input label="Email" name="email" type="email" value={form.email} onChange={handleChange} error={errors.email} />
-        <Input label="Address" name="address" value={form.address} onChange={handleChange} error={errors.address} />
+        <Input label="Name" name="name" placeholder="Store name (20-60 characters)" value={form.name} onChange={handleChange} error={errors.name} />
+        <Input label="Email" name="email" type="email" placeholder="store@example.com" value={form.email} onChange={handleChange} error={errors.email} />
+        <Input label="Address" name="address" placeholder="Shop address with city, state" value={form.address} onChange={handleChange} error={errors.address} />
         <div>
           <label className="block text-sm font-medium mb-1">Owner</label>
           <select

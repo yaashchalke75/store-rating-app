@@ -38,6 +38,7 @@ export default function ChangePasswordForm() {
           label="Current Password"
           name="currentPassword"
           type="password"
+          placeholder="Enter current password"
           value={form.currentPassword}
           onChange={handleChange}
           required
@@ -46,6 +47,7 @@ export default function ChangePasswordForm() {
           label="New Password"
           name="newPassword"
           type="password"
+          placeholder="8-16 chars, 1 uppercase, 1 special"
           value={form.newPassword}
           onChange={handleChange}
           error={errors.newPassword}

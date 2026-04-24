@@ -35,8 +35,8 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center p-4">
       <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white border rounded p-6 space-y-4">
         <h2 className="text-xl font-semibold">Login</h2>
-        <Input label="Email" name="email" type="email" value={form.email} onChange={handleChange} required />
-        <Input label="Password" name="password" type="password" value={form.password} onChange={handleChange} required />
+        <Input label="Email" name="email" type="email" placeholder="you@example.com" value={form.email} onChange={handleChange} required />
+        <Input label="Password" name="password" type="password" placeholder="Enter your password" value={form.password} onChange={handleChange} required />
         <Button type="submit" disabled={loading} className="w-full">
           {loading ? 'Signing in...' : 'Login'}
         </Button>

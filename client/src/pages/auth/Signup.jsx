@@ -48,10 +48,10 @@ export default function Signup() {
     <div className="min-h-screen flex items-center justify-center p-4">
       <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white border rounded p-6 space-y-4">
         <h2 className="text-xl font-semibold">Create Account</h2>
-        <Input label="Name" name="name" value={form.name} onChange={handleChange} error={errors.name} />
-        <Input label="Email" name="email" type="email" value={form.email} onChange={handleChange} error={errors.email} />
-        <Input label="Address" name="address" value={form.address} onChange={handleChange} error={errors.address} />
-        <Input label="Password" name="password" type="password" value={form.password} onChange={handleChange} error={errors.password} />
+        <Input label="Name" name="name" placeholder="Full name (20-60 characters)" value={form.name} onChange={handleChange} error={errors.name} />
+        <Input label="Email" name="email" type="email" placeholder="you@example.com" value={form.email} onChange={handleChange} error={errors.email} />
+        <Input label="Address" name="address" placeholder="House, street, city, state" value={form.address} onChange={handleChange} error={errors.address} />
+        <Input label="Password" name="password" type="password" placeholder="8-16 chars, 1 uppercase, 1 special" value={form.password} onChange={handleChange} error={errors.password} />
         <Button type="submit" disabled={loading} className="w-full">
           {loading ? 'Creating...' : 'Sign up'}
         </Button>
