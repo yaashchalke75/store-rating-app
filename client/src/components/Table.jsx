@@ -6,14 +6,16 @@ export default function Table({ columns, rows, onSort, sortBy, order }) {
   };
 
   return (
-    <div className="overflow-x-auto border rounded bg-white">
+    <div className="overflow-x-auto border rounded-lg bg-white shadow-sm">
       <table className="min-w-full text-sm">
-        <thead className="bg-gray-100 text-left">
+        <thead className="bg-indigo-600 text-white text-left">
           <tr>
             {columns.map((c) => (
               <th
                 key={c.key}
-                className={`px-4 py-2 font-medium ${c.sortable ? 'cursor-pointer select-none' : ''}`}
+                className={`px-4 py-3 font-medium text-xs uppercase tracking-wide ${
+                  c.sortable ? 'cursor-pointer select-none hover:bg-indigo-700' : ''
+                }`}
                 onClick={() => c.sortable && toggle(c.key)}
               >
                 {c.label}
@@ -25,15 +27,18 @@ export default function Table({ columns, rows, onSort, sortBy, order }) {
         <tbody>
           {rows.length === 0 ? (
             <tr>
-              <td colSpan={columns.length} className="text-center py-6 text-gray-400">
+              <td colSpan={columns.length} className="text-center py-8 text-gray-400">
                 No data
               </td>
             </tr>
           ) : (
             rows.map((row, i) => (
-              <tr key={row.id || i} className="border-t hover:bg-gray-50">
+              <tr
+                key={row.id || i}
+                className={`border-t hover:bg-indigo-50 ${i % 2 === 1 ? 'bg-gray-50' : ''}`}
+              >
                 {columns.map((c) => (
-                  <td key={c.key} className="px-4 py-2">
+                  <td key={c.key} className="px-4 py-3">
                     {c.render ? c.render(row) : row[c.key]}
                   </td>
                 ))}

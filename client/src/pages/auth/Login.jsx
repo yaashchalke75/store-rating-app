@@ -32,17 +32,42 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white border rounded p-6 space-y-4">
-        <h2 className="text-xl font-semibold">Login</h2>
-        <Input label="Email" name="email" type="email" placeholder="you@example.com" value={form.email} onChange={handleChange} required />
-        <Input label="Password" name="password" type="password" placeholder="Enter your password" value={form.password} onChange={handleChange} required />
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-sm bg-white border rounded-lg shadow-sm p-8 space-y-5"
+      >
+        <div className="text-center space-y-1">
+          <h1 className="text-2xl font-semibold text-indigo-600">StoreRatePro</h1>
+          <p className="text-sm text-gray-500">Sign in to your account</p>
+        </div>
+
+        <Input
+          label="Email"
+          name="email"
+          type="email"
+          placeholder="you@example.com"
+          value={form.email}
+          onChange={handleChange}
+          required
+        />
+        <Input
+          label="Password"
+          name="password"
+          type="password"
+          placeholder="Enter your password"
+          value={form.password}
+          onChange={handleChange}
+          required
+        />
+
         <Button type="submit" disabled={loading} className="w-full">
           {loading ? 'Signing in...' : 'Login'}
         </Button>
+
         <p className="text-sm text-center text-gray-600">
-          No account?{' '}
-          <Link to="/signup" className="text-indigo-600 hover:underline">
+          Don't have an account?{' '}
+          <Link to="/signup" className="text-indigo-600 hover:underline font-medium">
             Sign up
           </Link>
         </p>
