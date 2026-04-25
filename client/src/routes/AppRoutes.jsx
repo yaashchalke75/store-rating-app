@@ -13,6 +13,7 @@ import AdminStores from '../pages/admin/Stores';
 import AddUser from '../pages/admin/AddUser';
 import AddStore from '../pages/admin/AddStore';
 import UserDetail from '../pages/admin/UserDetail';
+import AdminChangePassword from '../pages/admin/ChangePassword';
 
 import UserLayout from '../layouts/UserLayout';
 import UserStores from '../pages/user/Stores';
@@ -45,6 +46,7 @@ export default function AppRoutes() {
         <Route path="/admin/users/:id" element={<UserDetail />} />
         <Route path="/admin/stores" element={<AdminStores />} />
         <Route path="/admin/stores/new" element={<AddStore />} />
+        <Route path="/admin/change-password" element={<AdminChangePassword />} />
       </Route>
 
       <Route

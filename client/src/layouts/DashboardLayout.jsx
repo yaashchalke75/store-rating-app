@@ -1,12 +1,13 @@
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate, Link } from 'react-router-dom';
 import { FiLogOut, FiUser } from 'react-icons/fi';
 import { useAuth } from '../context/AuthContext';
+import { CHANGE_PASSWORD_PATH } from '../utils/constants';
 import ThemeToggle from '../components/ThemeToggle';
 
 const ROLE_LABELS = {
-  admin: 'Admin',
-  owner: 'Store Owner',
-  user: 'User',
+  ADMIN: 'Admin',
+  OWNER: 'Store Owner',
+  USER: 'User',
 };
 
 export default function DashboardLayout({ links, title }) {
@@ -19,6 +20,7 @@ export default function DashboardLayout({ links, title }) {
   };
 
   const roleLabel = ROLE_LABELS[user?.role] || user?.role;
+  const changePasswordPath = CHANGE_PASSWORD_PATH[user?.role];
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
@@ -26,16 +28,28 @@ export default function DashboardLayout({ links, title }) {
         <h1 className="font-semibold text-indigo-600 dark:text-indigo-400">StoreRatePro</h1>
         <div className="flex items-center gap-3 text-sm">
           <ThemeToggle />
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <span className="h-8 w-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center dark:bg-indigo-900/40 dark:text-indigo-300">
               <FiUser />
             </span>
-            <span className="text-gray-700 font-medium dark:text-gray-200">{user?.name}</span>
-            {roleLabel && (
-              <span className="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-xs dark:bg-indigo-900/40 dark:text-indigo-300">
-                {roleLabel}
-              </span>
-            )}
+            <div className="flex flex-col leading-tight">
+              <div className="flex items-center gap-2">
+                <span className="text-gray-700 font-medium dark:text-gray-200">{user?.name}</span>
+                {roleLabel && (
+                  <span className="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-xs dark:bg-indigo-900/40 dark:text-indigo-300">
+                    {roleLabel}
+                  </span>
+                )}
+              </div>
+              {changePasswordPath && (
+                <Link
+                  to={changePasswordPath}
+                  className="text-xs font-bold text-indigo-600 hover:underline dark:text-indigo-400"
+                >
+                  Change Password
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </header>

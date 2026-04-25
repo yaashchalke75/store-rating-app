@@ -9,3 +9,9 @@ export const ROLE_HOME = {
   USER: '/stores',
   OWNER: '/owner',
 };
+
+export const CHANGE_PASSWORD_PATH = {
+  ADMIN: '/admin/change-password',
+  USER: '/change-password',
+  OWNER: '/owner/change-password',
+};
