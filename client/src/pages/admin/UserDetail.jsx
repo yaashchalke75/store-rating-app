@@ -16,18 +16,18 @@ export default function UserDetail() {
 
   return (
     <div className="max-w-lg">
-      <Link to="/admin/users" className="text-sm text-indigo-600 hover:underline">
+      <Link to="/admin/users" className="text-sm text-indigo-600 hover:underline dark:text-indigo-400">
         ← Back to users
       </Link>
-      <div className="bg-white border rounded p-6 mt-3 space-y-2">
-        <h2 className="text-lg font-semibold">{user.name}</h2>
-        <p className="text-sm"><span className="text-gray-500">Email:</span> {user.email}</p>
-        <p className="text-sm"><span className="text-gray-500">Address:</span> {user.address}</p>
-        <p className="text-sm"><span className="text-gray-500">Role:</span> {user.role}</p>
+      <div className="bg-white border rounded p-6 mt-3 space-y-2 dark:bg-gray-800 dark:border-gray-700">
+        <h2 className="text-lg font-semibold dark:text-gray-100">{user.name}</h2>
+        <p className="text-sm dark:text-gray-200"><span className="text-gray-500 dark:text-gray-400">Email:</span> {user.email}</p>
+        <p className="text-sm dark:text-gray-200"><span className="text-gray-500 dark:text-gray-400">Address:</span> {user.address}</p>
+        <p className="text-sm dark:text-gray-200"><span className="text-gray-500 dark:text-gray-400">Role:</span> {user.role}</p>
         {user.role === ROLES.OWNER && (
-          <p className="text-sm">
-            <span className="text-gray-500">Store Rating:</span>{' '}
-            {user.storeRating != null ? Number(user.storeRating).toFixed(1) : 'No ratings yet'}
+          <p className="text-sm dark:text-gray-200">
+            <span className="text-gray-500 dark:text-gray-400">Store Rating:</span>{' '}
+            {user.storeRating != null ? `${Number(user.storeRating).toFixed(1)}/5` : 'No ratings yet'}
           </p>
         )}
       </div>

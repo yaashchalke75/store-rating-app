@@ -6,6 +6,7 @@ import { login } from '../../services/auth';
 import { ROLE_HOME } from '../../utils/constants';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import ThemeToggle from '../../components/ThemeToggle';
 
 export default function Login() {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -32,14 +33,17 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 dark:bg-gray-900 relative">
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-sm bg-white border rounded-lg shadow-sm p-8 space-y-5"
+        className="w-full max-w-sm bg-white border rounded-lg shadow-sm p-8 space-y-5 dark:bg-gray-800 dark:border-gray-700"
       >
         <div className="text-center space-y-1">
-          <h1 className="text-2xl font-semibold text-indigo-600">StoreRatePro</h1>
-          <p className="text-sm text-gray-500">Sign in to your account</p>
+          <h1 className="text-2xl font-semibold text-indigo-600 dark:text-indigo-400">StoreRatePro</h1>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Sign in to your account</p>
         </div>
 
         <Input
@@ -65,9 +69,9 @@ export default function Login() {
           {loading ? 'Signing in...' : 'Login'}
         </Button>
 
-        <p className="text-sm text-center text-gray-600">
+        <p className="text-sm text-center text-gray-600 dark:text-gray-400">
           Don't have an account?{' '}
-          <Link to="/signup" className="text-indigo-600 hover:underline font-medium">
+          <Link to="/signup" className="text-indigo-600 hover:underline font-medium dark:text-indigo-400">
             Sign up
           </Link>
         </p>

@@ -48,8 +48,8 @@ export default function Users() {
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-semibold">Users</h2>
-        <Link to="/admin/users/new" className="text-sm text-indigo-600 hover:underline">
+        <h2 className="text-lg font-semibold dark:text-gray-100">Users</h2>
+        <Link to="/admin/users/new" className="text-sm text-indigo-600 hover:underline dark:text-indigo-400">
           + Add User
         </Link>
       </div>
@@ -59,7 +59,7 @@ export default function Users() {
         <select
           value={role}
           onChange={(e) => { setRole(e.target.value); setPage(1); }}
-          className="border rounded px-3 py-2 text-sm"
+          className="border border-gray-300 rounded px-3 py-2 text-sm dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100"
         >
           <option value="">All roles</option>
           <option value={ROLES.ADMIN}>Admin</option>

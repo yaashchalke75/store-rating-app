@@ -51,18 +51,18 @@ export default function AddStore() {
 
   return (
     <div className="max-w-md">
-      <h2 className="text-lg font-semibold mb-4">Add Store</h2>
-      <form onSubmit={handleSubmit} className="bg-white border rounded p-6 space-y-4">
+      <h2 className="text-lg font-semibold mb-4 dark:text-gray-100">Add Store</h2>
+      <form onSubmit={handleSubmit} className="bg-white border rounded p-6 space-y-4 dark:bg-gray-800 dark:border-gray-700">
         <Input label="Name" name="name" placeholder="Store name (20-60 characters)" value={form.name} onChange={handleChange} error={errors.name} />
         <Input label="Email" name="email" type="email" placeholder="store@example.com" value={form.email} onChange={handleChange} error={errors.email} />
         <Input label="Address" name="address" placeholder="Shop address with city, state" value={form.address} onChange={handleChange} error={errors.address} />
         <div>
-          <label className="block text-sm font-medium mb-1">Owner</label>
+          <label className="block text-sm font-medium mb-1 dark:text-gray-300">Owner</label>
           <select
             name="ownerId"
             value={form.ownerId}
             onChange={handleChange}
-            className="w-full border rounded px-3 py-2 text-sm"
+            className="w-full border border-gray-300 rounded px-3 py-2 text-sm dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100"
           >
             <option value="">Select owner</option>
             {owners.map((o) => (
@@ -71,7 +71,7 @@ export default function AddStore() {
               </option>
             ))}
           </select>
-          {errors.ownerId && <p className="text-xs text-red-600 mt-1">{errors.ownerId}</p>}
+          {errors.ownerId && <p className="text-xs text-red-600 mt-1 dark:text-red-400">{errors.ownerId}</p>}
         </div>
         <Button type="submit" disabled={loading}>
           {loading ? 'Saving...' : 'Create Store'}

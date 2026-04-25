@@ -37,7 +37,7 @@ export default function Stores() {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold mb-4">Stores</h2>
+      <h2 className="text-lg font-semibold mb-4 dark:text-gray-100">Stores</h2>
       <div className="mb-4">
         <SearchBar value={search} onChange={(v) => { setSearch(v); setPage(1); }} placeholder="Search by name or address" />
       </div>
@@ -46,21 +46,21 @@ export default function Stores() {
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {data.items.map((s) => (
-              <div key={s.id} className="bg-white border rounded p-5">
-                <h3 className="font-semibold">{s.name}</h3>
-                <p className="text-sm text-gray-500 mt-1">{s.address}</p>
-                <div className="mt-3 text-sm">
-                  <span className="text-gray-500">Overall: </span>
-                  {s.avgRating ? Number(s.avgRating).toFixed(1) : '—'}
+              <div key={s.id} className="bg-white border rounded p-5 dark:bg-gray-800 dark:border-gray-700">
+                <h3 className="font-semibold dark:text-gray-100">{s.name}</h3>
+                <p className="text-sm text-gray-500 mt-1 dark:text-gray-400">{s.address}</p>
+                <div className="mt-3 text-sm dark:text-gray-200">
+                  <span className="text-gray-500 dark:text-gray-400">Overall: </span>
+                  {s.avgRating ? `${Number(s.avgRating).toFixed(1)}/5` : '—'}
                 </div>
                 <div className="mt-3">
-                  <p className="text-sm text-gray-500 mb-1">My rating</p>
+                  <p className="text-sm text-gray-500 mb-1 dark:text-gray-400">My rating</p>
                   <StarRating value={s.myRating || 0} onChange={(n) => handleRate(s, n)} />
                 </div>
               </div>
             ))}
             {data.items.length === 0 && (
-              <p className="text-sm text-gray-500">No stores found.</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">No stores found.</p>
             )}
           </div>
           <Pagination page={page} totalPages={data.totalPages} onChange={setPage} />

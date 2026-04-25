@@ -13,7 +13,7 @@ const columns = [
   {
     key: 'avgRating',
     label: 'Avg Rating',
-    render: (r) => (r.avgRating ? Number(r.avgRating).toFixed(1) : '-'),
+    render: (r) => (r.avgRating ? `${Number(r.avgRating).toFixed(1)}/5` : '-'),
   },
 ];
 
@@ -36,8 +36,8 @@ export default function Stores() {
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-semibold">Stores</h2>
-        <Link to="/admin/stores/new" className="text-sm text-indigo-600 hover:underline">
+        <h2 className="text-lg font-semibold dark:text-gray-100">Stores</h2>
+        <Link to="/admin/stores/new" className="text-sm text-indigo-600 hover:underline dark:text-indigo-400">
           + Add Store
         </Link>
       </div>
