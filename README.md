@@ -37,15 +37,11 @@ A full-stack **Store Rating Web Application** where users rate stores (1 to 5). 
 
 ## Demo Credentials
 
-After running the seed script (`npm run seed` from `server/`), these accounts are available:
-
 | Role | Email | Password |
 |---|---|---|
-| Admin | `admin@storerate.pro` | `Admin@123` |
-| Store Owner | `owner@storerate.pro` | `Owner@123` |
-| Normal User | `user@storerate.pro` | `User@1234` |
-
-The seed also creates one demo store assigned to the owner so the owner dashboard has data immediately.
+| Admin | `admin@storerate.com` | `Admin@123` |
+| Store Owner | `rajesh.owner@storerate.com` | `Pass@1234` |
+| Normal User | `sneha.user@storerate.com` | `Pass@1234` |
 
 ## Prerequisites
 
