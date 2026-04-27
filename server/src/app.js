@@ -16,7 +16,7 @@ app.use(cors({ origin: env.clientOrigin, credentials: true }));
 app.use(express.json());
 app.use(morgan('dev'));
 
-app.get('/api/health', (_req, res) => res.json({ ok: true }));
+app.get('/api/health', (_req, res) => res.json({ ok: true, uptime: process.uptime() }));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
