@@ -43,8 +43,8 @@ A full-stack **Store Rating Web Application** where users rate stores (1 to 5). 
 | Role        | Email                        | Password    |
 | ----------- | ---------------------------- | ----------- |
 | Admin       | `admin@storerate.com`        | `Admin@123` |
-| Store Owner | `rajesh.owner@storerate.com` | `Owner@123` |
-| Normal User | `sneha.user@storerate.com`   | `User@123`  |
+| Store Owner | `rajesh.owner@storerate.com` | `Pass@1234` |
+| Normal User | `sneha.user@storerate.com`   | `Pass@1234` |
 
 ## Prerequisites
 

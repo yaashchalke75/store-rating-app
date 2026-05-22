@@ -9,7 +9,7 @@ async function main() {
 
   const admin = await prisma.user.upsert({
     where: { email: 'admin@storerate.com' },
-    update: {},
+    update: { password: adminHash },
     create: {
       name: 'System Administrator Account',
       email: 'admin@storerate.com',
@@ -21,7 +21,7 @@ async function main() {
 
   const owner = await prisma.user.upsert({
     where: { email: 'rajesh.owner@storerate.com' },
-    update: {},
+    update: { password: sharedHash },
     create: {
       name: 'Rajesh Kumar Sharma Patel Demo',
       email: 'rajesh.owner@storerate.com',
@@ -33,7 +33,7 @@ async function main() {
 
   const user = await prisma.user.upsert({
     where: { email: 'sneha.user@storerate.com' },
-    update: {},
+    update: { password: sharedHash },
     create: {
       name: 'Sneha Joshi Patil Deshmukh Demo',
       email: 'sneha.user@storerate.com',
