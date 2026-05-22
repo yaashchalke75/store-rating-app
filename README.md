@@ -11,6 +11,7 @@ A full-stack **Store Rating Web Application** where users rate stores (1 to 5). 
 ## Roles & Capabilities
 
 ### System Administrator
+
 - View dashboard with totals: users, stores, ratings
 - View, search, sort, filter, and paginate all users
 - View detailed user profile (including a store owner's average rating)
@@ -21,12 +22,14 @@ A full-stack **Store Rating Web Application** where users rate stores (1 to 5). 
 - Switch between light and dark theme
 
 ### Store Owner
+
 - View dashboard with the store's average rating and total ratings
 - See the list of users who rated their store (name, email, rating, date)
 - Change own password
 - Switch between light and dark theme
 
 ### Normal User
+
 - Sign up for an account
 - Browse all stores with search by name or address
 - See each store's overall average rating
@@ -37,11 +40,11 @@ A full-stack **Store Rating Web Application** where users rate stores (1 to 5). 
 
 ## Demo Credentials
 
-| Role | Email | Password |
-|---|---|---|
-| Admin | `admin@storerate.com` | `Admin@123` |
-| Store Owner | `rajesh.owner@storerate.com` | `Pass@1234` |
-| Normal User | `sneha.user@storerate.com` | `Pass@1234` |
+| Role        | Email                        | Password    |
+| ----------- | ---------------------------- | ----------- |
+| Admin       | `admin@storerate.com`        | `Admin@123` |
+| Store Owner | `rajesh.owner@storerate.com` | `Owner@123` |
+| Normal User | `sneha.user@storerate.com`   | `User@123`  |
 
 ## Prerequisites
 
@@ -61,6 +64,7 @@ cd StoreRatePro
 ### 2. Create the database
 
 Open **pgAdmin**, connect to your server, then right-click **Databases → Create → Database**:
+
 - **Name:** `storeratepro`
 - **Owner:** `postgres`
 
@@ -118,8 +122,8 @@ Frontend starts at **http://localhost:5173**.
 
 ## Ports
 
-| Service | Port |
-|---|---|
-| Frontend | 5173 |
-| Backend | 5000 |
+| Service    | Port |
+| ---------- | ---- |
+| Frontend   | 5173 |
+| Backend    | 5000 |
 | PostgreSQL | 5432 |
