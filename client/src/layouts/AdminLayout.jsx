@@ -9,8 +9,6 @@ const links = [
   { to: '/admin/stores/new', label: 'Add Store', icon: <FiPlusSquare /> },
 ];
 
-
-
 export default function AdminLayout() {
   return <DashboardLayout links={links} title="Admin Panel" />;
 }
