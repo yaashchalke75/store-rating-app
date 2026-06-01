@@ -63,10 +63,11 @@ cd StoreRatePro
 
 ### 2. Create the database
 
-Open **pgAdmin**, connect to your server, then right-click **Databases → Create → Database**:
+Create a new PostgreSQL database named `storeratepro` (owner: `postgres`). Use whichever tool you prefer:
 
-- **Name:** `storeratepro`
-- **Owner:** `postgres`
+- **Windows:** open **pgAdmin** → right-click **Databases → Create → Database**
+- **Mac / Linux:** run `createdb storeratepro` in your terminal
+- **Any OS:** run `psql -U postgres -c "CREATE DATABASE storeratepro;"`
 
 ### 3. Backend
 
@@ -75,19 +76,15 @@ cd server
 npm install
 ```
 
-Create a file named `.env` inside `server/` with this content:
+Copy the example env file and fill in your details:
 
-```env
-DATABASE_URL="postgresql://postgres:YOUR_PASSWORD@localhost:5432/storeratepro?schema=public"
-JWT_SECRET="any-long-random-string"
-JWT_EXPIRES_IN="7d"
-PORT=5000
-CLIENT_ORIGIN="http://localhost:5173"
+```bash
+cp .env.example .env
 ```
 
-Replace `YOUR_PASSWORD` with your PostgreSQL password.
+Then open `server/.env` and replace `YOUR_PASSWORD` with your PostgreSQL password. The `JWT_SECRET` can be any long random string.
 
-Then run:
+Run the database migration, seed the demo data, and start the server:
 
 ```bash
 npx prisma migrate dev --name init
@@ -95,7 +92,7 @@ npm run seed
 npm run dev
 ```
 
-Backend starts at **http://localhost:5000**.
+Backend starts at **http://localhost:5000**. You can verify it's running by opening **http://localhost:5000/api/health** in your browser — you should see `{"ok":true,...}`.
 
 ### 4. Frontend
 
@@ -104,13 +101,10 @@ Open a **new terminal**:
 ```bash
 cd client
 npm install
+cp .env.example .env
 ```
 
-Create a file named `.env` inside `client/` with:
-
-```env
-VITE_API_URL=http://localhost:5000/api
-```
+The default `VITE_API_URL` in `.env.example` already points at the backend, so no edits are needed unless you changed the backend port.
 
 Then run:
 
@@ -118,7 +112,7 @@ Then run:
 npm run dev
 ```
 
-Frontend starts at **http://localhost:5173**.
+Frontend starts at **http://localhost:5173**. Open it in your browser and log in with any of the demo credentials above.
 
 ## Ports
 
